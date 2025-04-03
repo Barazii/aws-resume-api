@@ -1,0 +1,2 @@
+- make an event bridge for calling the lambda
+- check the terraform thing
