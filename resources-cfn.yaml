@@ -2,6 +2,18 @@ AWSTemplateFormatVersion: 2010-09-09
 Description: Resume challenge stack 
 
 Resources:
+  ResumesTable:
+    Type: AWS::DynamoDB::Table
+    Properties:
+      TableName: resume
+      AttributeDefinitions:
+        - AttributeName: interviewee
+          AttributeType: N
+      KeySchema:
+        - AttributeName: interviewee
+          KeyType: HASH
+      BillingMode: PAY_PER_REQUEST
+        
   LambdaExecutionRole:
     Type: AWS::IAM::Role
     Properties:
@@ -20,7 +32,7 @@ Resources:
               - Effect: Allow
                 Action:
                   - dynamodb:GetItem
-                Resource: arn:aws:dynamodb:eu-north-1:482497089777:table/resume
+                Resource: !GetAtt ResumesTable.Arn
               - Effect: Allow
                 Action:
                   - logs:CreateLogGroup

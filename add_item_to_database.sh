@@ -1,0 +1,1 @@
+aws dynamodb put-item --table-name resume --item file://resume.json --region eu-north-1

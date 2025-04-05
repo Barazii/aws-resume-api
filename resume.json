@@ -1,0 +1,55 @@
+{
+    "interviewee": {
+        "N": "1"
+    },
+    "basics": {
+        "M": {
+            "label": {
+                "S": "programmer"
+            },
+            "location": {
+                "M": {
+                    "city": {
+                        "S": "Amsterdam"
+                    },
+                    "country": {
+                        "S": "NL"
+                    }
+                }
+            },
+            "name": {
+                "S": "mahmood barazi"
+            }
+        }
+    },
+    "work": {
+        "L": [
+            {
+                "M": {
+                    "company": {
+                        "S": "ASML"
+                    },
+                    "number of year": {
+                        "N": "4"
+                    },
+                    "position": {
+                        "S": "CEO"
+                    }
+                }
+            },
+            {
+                "M": {
+                    "company": {
+                        "S": "Tesla"
+                    },
+                    "number of year": {
+                        "N": "5"
+                    },
+                    "position": {
+                        "S": "CTO"
+                    }
+                }
+            }
+        ]
+    }
+}
