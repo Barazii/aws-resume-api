@@ -1,3 +1,1 @@
-- make an event bridge for calling the lambda
 - check the terraform thing
-- check the gateway api thing  

@@ -9,3 +9,5 @@ curl {FUNCTION_URL}
 # Cloud services
 - AWS Lambda
 - AWS DynamoDB
+- AWS API Gateway
+- AWS Cloudformation
