@@ -2,13 +2,21 @@ name: deploy to lambda
 on: [push]
 jobs:
 
-  deploy_source:
-    name: deploy lambda from source
+  deploy_and_upalod_source:
+    name: deploy and uplaod lambda code
     runs-on: ubuntu-latest
     steps:
       - name: checkout source code
         uses: actions/checkout@v3
-      - name: default deploy
+      - name: upload Lambda code to S3
+        run: |
+          zip lambda_function.zip lambda_function.py
+          aws s3 cp lambda_function.zip s3://resume-app-challenge/lambda_function.zip
+        env:
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          AWS_REGION: eu-north-1
+      - name: deploy Lambda code to Lambda
         uses: appleboy/lambda-action@v0.2.0
         with:
           aws_access_key_id: ${{ secrets.AWS_ACCESS_KEY_ID }}
